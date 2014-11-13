@@ -17,8 +17,13 @@ public class Q2 {
 			return;
 		}
 		String line = null;
+		String[] result;
 		while ((line = reader.readLine()) != null) {
-			System.out.println(line);
+			result = line.split("//");
+			if (result.length > 1) {
+				// the line includes // comment 
+				System.out.println(result[1]);			
+			}
 		}
 		reader.close();
 		
