@@ -18,14 +18,34 @@ public class Q2 {
 		}
 		String line = null;
 		String[] result;
+		boolean inComment = false;
 		while ((line = reader.readLine()) != null) {
 			result = line.split("//");
 			if (result.length > 1) {
-				// the line includes // comment 
+				// the line includes comment from this type: // ...  
 				System.out.println(result[1]);			
+			} 
+			else {
+				result = line.split("/*");
+				if (result.length > 1) {
+					// the line includes comment from this type: /* ...   
+					System.out.println(result[1]);
+					inComment = true;
+				}
+				else {
+					result = line.split("*/");
+					if (result.length > 1) {
+						// last line of ... */ comment 
+						System.out.println(result[0]);
+						inComment = false;
+					}
+				}	
 			}
+			if (inComment) {
+				System.out.println(line);
+			}
+		
 		}
 		reader.close();
-		
 	}
 }
