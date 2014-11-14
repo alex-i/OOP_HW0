@@ -17,32 +17,38 @@ public class Q2 {
 			return;
 		}
 		String line = null;
-		String[] result;
+		String[] result, tempResult;
 		boolean inComment = false;
 		while ((line = reader.readLine()) != null) {
 			result = line.split("//");
 			if (result.length > 1) {
 				// the line includes comment from this type: // ...  
 				System.out.println(result[1]);			
-			} 
-			else {
-				result = line.split("/*");
+			} else {
+				result = line.split("/\\*");
 				if (result.length > 1) {
-					// the line includes comment from this type: /* ...   
-					System.out.println(result[1]);
-					inComment = true;
-				}
-				else {
-					result = line.split("*/");
-					if (result.length > 1) {
-						// last line of ... */ comment 
-						System.out.println(result[0]);
-						inComment = false;
+					if (result[1].contains("*/")) {
+						// the line includes comment from this type: /* ...  */
+						tempResult = result[1].split("\\*/");
+						System.out.println(tempResult[0]);					
+					} else {
+						// first line of the comment from this type: /* ...
+						System.out.println(result[1]);
+						inComment = true;
+					}
+				} else {
+					if (inComment) {
+						if (line.contains("*/")) {
+							// last line of the comment from this type: ... */  
+							result = line.split("\\*/");
+							System.out.println(result[0]);
+							inComment = false;
+						} else {
+							// in the middle of the comment from this type /* ... */
+							System.out.println(line);
+						}
 					}
 				}	
-			}
-			if (inComment) {
-				System.out.println(line);
 			}
 		
 		}
