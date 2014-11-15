@@ -18,11 +18,11 @@ public class PrintComments {
 			if (result[1].contains("*/")) {
 				// the line includes comment from this type: /* ...  */
 				tempResult = result[1].split("\\*/", 2);
-				System.out.print(tempResult[0]);
+				System.out.println(tempResult[0]);
 				if (tempResult.length > 1) {
 					printCommentLine(tempResult[1]);
 				}
-				System.out.print("\n");
+				//System.out.print("\n");
 			} else {
 				// first line of the comment from this type: /* ...
 				System.out.println(result[1]);
