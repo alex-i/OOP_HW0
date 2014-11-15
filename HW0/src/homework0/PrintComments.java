@@ -61,14 +61,19 @@ public class PrintComments {
 					result = line.split("//");
 					System.out.println(result[1]);	
 				} else  {
+					// the line includes comment from this type: /* ...  
 					printCommentLine(line);
 				}
 			} else {
 				//in comment /*...*/
 				if (line.contains("*/")) {
 					// last line of the comment from this type: ... */  
-					printCommentLine(line);
+					result = line.split("\\*/");
+					System.out.println(result[0]);
 					inComment = false;
+					if (result.length > 1) {
+						printCommentLine(result[1]);					
+					}
 				} else {
 					// in the middle of the comment from this type /* ... */
 					System.out.println(line);
