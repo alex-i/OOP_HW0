@@ -31,12 +31,12 @@ public class PrintComments {
 		} else if ((line.indexOf("//") < line.indexOf("/*") || line.indexOf("/*") == -1) &&
 				line.indexOf("//") != -1) {
 			//there is comment //... after /*...*/ comment
-			result = line.split("//");
+			result = line.split("//", 2);
 			System.out.println(result[1]);
 			
 		}
 	}
-	
+	/*/**/
 	public static void main(String[] args) throws IOException {
 		if (args.length != 1)
 		{
@@ -58,7 +58,7 @@ public class PrintComments {
 				if ((line.indexOf("//") < line.indexOf("/*") || line.indexOf("/*") == -1) &&
 						line.indexOf("//") != -1) {
 					// the line includes comment from this type: // ...  
-					result = line.split("//");
+					result = line.split("//", 2);
 					System.out.println(result[1]);	
 				} else  {
 					// the line includes comment from this type: /* ...  
@@ -68,7 +68,7 @@ public class PrintComments {
 				//in comment /*...*/
 				if (line.contains("*/")) {
 					// last line of the comment from this type: ... */  
-					result = line.split("\\*/");
+					result = line.split("\\*/", 2);
 					System.out.println(result[0]);
 					inComment = false;
 					if (result.length > 1) {
