@@ -6,7 +6,7 @@ public class PrintComments {
 
 	public static boolean inComment = false;
 	
-	//print all the comments in line that include /*
+	//this method prints all the comments in line that includes "/*"
 	public static void printCommentLine(String line) {
 		String[] result, tempResult;
 		if (line == "") {
@@ -53,6 +53,7 @@ public class PrintComments {
 		} catch (Exception e) {
 			return;
 		}
+		
 		String line = null;
 		String[] result;
 		
@@ -64,7 +65,7 @@ public class PrintComments {
 					result = line.split("//", 2);
 					System.out.println(result[1]);	
 				} else  {
-					// the line includes comment from this type: /* ...  
+					// the line includes comment from this type: /* ... or there is no comment 
 					printCommentLine(line);
 				}
 			} else {
