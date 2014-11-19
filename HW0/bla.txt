@@ -1,35 +1,12 @@
-sdsdf //AAAA //AAAA
-//BBBB /*BBBB
-/*AAA*/
-/*AAA // AAA */
-/*CCC*/ dgfdsg /*BBB*/
-/*AAA
-AAA*/
-/*AAA */ gdff //BBB
-/*AAA*/ hfjfg /*BBB*/ hgjgh //CCC
-/*AAA*/ hfjfg /*BBB*/ hgjgh /*CCC
-DDD
-EEE*/
-fglkjdngds fsdgfd sdfngern
-dsfsdaf // comment 1
-//comment 2
-sdfsdf
-dfsdf /* comment 3 */ fdfdfdg /*comment3.5*/ hgjhgj //comment3.6
-sdfdsf
-/* comment 4
-comment //comment
-comment */
-sdfdsafsdfsdaf dsfsa fdsfs 
-fdsgfsdgfds ffdsg
-fdsgfd fsg sfgfgs //comment5
-fdsgsd
-moifdsgm /* comment6*/
-/*comment7*/gdhfh
-ghdgfh
-fdshgdh /*comment8
-comment*/
-fdhdfghdh
-//comment9/*...*/
-hgjhghj
-fjfghjgh
-/*comment10//... */
+sdsdf //AAA //BBB
+//CCC /*DDD
+fdgfds /*EEE*/fsdgfd
+/*FFF // GGG */ fdsgfdsg
+/*HHH*/ dgfdsg /*III*/ fdgfd
+/*JJJ
+KKK*/fdfdg //LLL
+/*MMM */ gdff //NNN */OOO
+/*PPP*/ hfjfg /*QQQ*/ hgjgh //RRR
+/*SSS*/ hfjfg /*TTT*/ hgjgh /*UUU
+VVV
+WWW*/dsfsdf //XXX /*YYY */ //ZZZ

@@ -1,6 +1,9 @@
 package homework0;
 
 import java.io.*;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class PrintComments {
 
@@ -22,7 +25,6 @@ public class PrintComments {
 				if (tempResult.length > 1) {
 					printCommentLine(tempResult[1]);
 				}
-				//System.out.print("\n");
 			} else {
 				// first line of the comment from this type: /* ...
 				System.out.println(result[1]);
@@ -36,18 +38,22 @@ public class PrintComments {
 			
 		}
 	}
-	/*/**/
+	
 	public static void main(String[] args) throws IOException {
 		if (args.length != 1)
 		{
 			System.out.println("Invalid arguments");
 			return;
 		}
+		File file = new File(args[0]);
+		if (!file.isFile()) {
+			System.out.println("File doesn't exists");
+			return;
+		}
 		BufferedReader reader;
 		try {
 			reader = new BufferedReader(new FileReader(args[0]));
 		} catch (Exception e) {
-			System.out.println("File doesn't exists");
 			return;
 		}
 		String line = null;
@@ -81,7 +87,6 @@ public class PrintComments {
 			}
 				
 		}
-		
 		
 		reader.close();
 	}
