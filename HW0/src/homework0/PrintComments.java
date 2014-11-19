@@ -32,7 +32,6 @@ public class PrintComments {
 			//there is comment //... after /*...*/ comment
 			result = line.split("//", 2);
 			System.out.println(result[1]);
-			
 		}
 	}
 	
@@ -83,7 +82,6 @@ public class PrintComments {
 					System.out.println(line);
 				}
 			}
-				
 		}
 		
 		reader.close();
